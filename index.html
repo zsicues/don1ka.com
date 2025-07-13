@@ -8,59 +8,42 @@
     @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html, body {
-      width: 100%;
       height: 100%;
+      width: 100%;
       font-family: 'Press Start 2P', cursive;
       color: white;
-      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     body {
       position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .video-wrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: -2;
     }
 
     .video-background {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .overlay {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
+      object-fit: cover;
       z-index: -1;
     }
 
     .content {
-      z-index: 1;
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
+      text-align: center;
       width: 100%;
-      height: 100svh; /* helyes viewport mobilon */
       padding: 2rem;
     }
 
@@ -76,6 +59,7 @@
       max-width: 700px;
       position: relative;
       overflow: hidden;
+      transition: transform 0.3s ease;
       animation: fadeInUp 1s ease-out forwards, float 6s ease-in-out infinite;
       opacity: 0;
       transform: translateY(30px);
@@ -122,7 +106,8 @@
       text-shadow: 2px 2px 0 black, -2px 2px 0 black, 2px -2px 0 black, -2px -2px 0 black;
     }
 
-    @media (max-width: 600px) {
+    /* Reszponzív méret igazítás mobilra */
+    @media (max-width: 480px) {
       .ticket-section h1 {
         font-size: 0.9rem;
       }
@@ -130,14 +115,10 @@
   </style>
 </head>
 <body>
-  <div class="video-wrapper">
-    <video autoplay muted loop playsinline class="video-background">
-      <source src="don1ka.mp4" type="video/mp4">
-      A böngésződ nem támogatja a videót.
-    </video>
-  </div>
-
-  <div class="overlay"></div>
+  <video autoplay muted loop class="video-background">
+    <source src="don1ka.mp4" type="video/mp4">
+    A böngésződ nem támogatja a videót.
+  </video>
 
   <div class="content">
     <a href="tickets.html" class="ticket-link">
