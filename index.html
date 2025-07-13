@@ -51,14 +51,14 @@
     .ticket-link {
       text-decoration: none;
       width: 100%;
-      max-width: 700px;
+      max-width: 400px; 
     }
 
     .ticket-section {
       position: relative;
       background-color: rgba(0, 0, 0, 0.8);
       border: 2px solid white;
-      padding: 2rem;
+      padding: 1.5rem; 
       width: 100%;
       text-align: center;
       overflow: hidden;
@@ -92,17 +92,19 @@
       position: relative;
       z-index: 1;
       color: white;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
+      line-height: 1.8rem;
       text-shadow: 2px 2px 0 black, -2px 2px 0 black, 2px -2px 0 black, -2px -2px 0 black;
     }
 
     @media (max-width: 600px) {
-      .ticket-section h1 {
-        font-size: 1rem;
-      }
-
       .ticket-section {
         padding: 1rem;
+      }
+
+      .ticket-section h1 {
+        font-size: 1.1rem;
+        line-height: 1.4rem;
       }
     }
   </style>
@@ -113,8 +115,7 @@
     <source src="don1ka.mp4" type="video/mp4">
     A böngésződ nem támogatja a videót.
   </video>
-
-
+ <!-- coded by zsicues -->
   <div class="content">
     <a href="tickets.html" class="ticket-link">
       <div class="ticket-section">
@@ -123,10 +124,9 @@
           <img src="gif1.gif" alt="gif">
           <img src="gif1.gif" alt="gif">
         </div>
-        <h1>TOUR TICKETS</h1>
+        <h1>TOUR<br>TICKETS</h1>
       </div>
     </a>
   </div>
-
 </body>
 </html>
